@@ -1,0 +1,233 @@
+.main-header {
+	&__steps {
+		width: 100%;
+
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+
+		@include media-breakpoint-up (md) {
+			max-width: rem(320);
+
+			position: static;
+			right: 0;
+
+			background-color: paint(accent);
+		}
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			width: auto;
+			max-width: none;
+
+			background-color: none;
+		}
+
+		&-bg {
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+
+				object-fit: cover;
+			}
+		}
+
+		&-menu {
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				position: relative;
+				height: 100%;
+			}
+
+			&-wrapper {
+				@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+					overflow: hidden;
+				}
+			}
+		}
+
+		&-button {
+			width: 100%;
+
+			position: relative;
+			z-index: 1;
+
+			@include media-breakpoint-up (md) {
+				max-width: rem(320);
+			}
+
+			svg {
+				display: none;
+			}
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				height: 100%;
+				max-width: rem(127);
+				padding: rem(24) rem(9) rem(24) rem(28);
+
+				font-size: rem(12);
+				line-height: rem(16);
+				letter-spacing: rem(.5);
+
+				background-color: paint(accent-variant-3);
+
+				border: none;
+
+				transition: color .2s, background-color .2s;
+
+				svg {
+					pointer-events: none;
+
+					display: block;
+
+					width: 100%;
+
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: rem(-6);
+					left: 0;
+					z-index: -1;
+
+					path {
+						transition: fill .2s;
+					}
+				}
+			}
+
+			&:hover,
+			&:focus {
+				background-color: paint(accent-variant);
+
+				svg path {
+					fill: paint(accent-variant);
+				}
+			}
+
+			&:focus {
+				border-color: paint(accent-variant);
+				background-color: paint(accent-variant);
+			}
+
+			&:after {
+				@include icon-font($icon-chev-collapse, rem(23));
+
+				margin-left: rem(9);
+
+				transition: transform $transition-default;
+
+				@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+					transform: rotate(-180deg);
+					margin-right: rem(11);
+					margin-left: 0;
+
+					font-size: rem(16);
+				}
+			}
+
+			&.active {
+				&:after {
+					transform: rotate(-180deg);
+				}
+			}
+		}
+
+		&-submenu {
+			display: none;
+
+			position: fixed;
+			top: calc(#{rem(55)} + var(--alert-bar-height));
+			right: 0;
+			bottom: rem(56);
+			left: 0;
+
+			background-color: paint(accent);
+			overflow-y: auto;
+
+			@include media-breakpoint-up (md) {
+				background-color: transparent;
+				width: 100%;
+				max-width: rem(320);
+				max-height: rem(548);
+
+				position: absolute;
+				top: rem(68);
+				left: unset;
+			}
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				min-width: rem(607);
+				max-height: none;
+
+				top: 100%;
+				bottom: unset;
+			}
+
+			&.active {
+				display: block;
+			}
+		}
+
+		&-menu {
+			.menu {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				height: 100%;
+
+				li {
+					display: flex;
+					flex: 1 0 auto;
+					align-items: center;
+
+					min-height: rem(114);
+
+					border-bottom: rem(1) solid $white;
+
+					@include media-breakpoint-up (md) {
+						min-height: rem(115);
+					}
+
+					@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+						min-height: auto;
+						background-color: rgba(paint(accent), .75);
+
+						transition: background-color .2s;
+
+						&:hover {
+							background-color: transparent;
+						}
+					}
+
+					a {
+						padding: rem(25) rem(40);
+
+						color: $white;
+						text-transform: uppercase;
+
+						@include font(17, 24, 700, 1px, false, $font-baskerville);
+
+						@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+							font-size: rem(24);
+							line-height: rem(24);
+							letter-spacing: rem(2);
+
+							width: 100%;
+							height: 100%;
+							display: flex;
+							justify-content: left;
+							align-items: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}

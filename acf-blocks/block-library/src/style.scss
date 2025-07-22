@@ -1,0 +1,175 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-library {
+	background-color: $white;
+	border-bottom: 1px solid paint(neutral-88);
+	border-top: 1px solid paint(neutral-88);
+	margin-bottom: rem(64);
+	max-height: 20vh;
+	overflow: auto;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+
+	body.admin-bar & {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+	}
+
+	&__hero {
+		padding: rem(80 0 40 0);
+		text-align: center;
+	}
+
+	&__nav {
+
+		@include body-2(false);
+		display: flex;
+		flex-direction: row;
+		gap: rem(32);
+		list-style: none;
+		margin: 0;
+		padding: rem(6 20 0);
+
+		> li {
+			flex: 1 1 auto;
+		}
+
+		li {
+			margin: 0;
+		}
+	}
+
+	&__nav-heading-wrapper {
+		@include overline(false);
+		align-items: center;
+
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-bottom: rem(8);
+	}
+
+	&__nav-heading {
+		margin-bottom: 0;
+		margin-right: rem(12);
+	}
+
+	&__toggle-button,
+	&__hover-labels-toggle-button {
+		-webkit-appearance: none;
+		background-color: transparent;
+		border: none;
+		display: block;
+		font-weight: 400;
+		padding: 0;
+	}
+
+	&__hover-labels-toggle-button {
+		span {
+			&:last-child {
+				display: none;
+			}
+		}
+
+		&.active {
+			span {
+				&:first-child {
+					display: none;
+				}
+
+				&:last-child {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&__toggle-button {
+		margin-right: rem(12);
+	}
+
+	&__nav-submenu {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: rem(0 6 6 0);
+		}
+	}
+
+	&__nav-item {
+		white-space: nowrap;
+	}
+
+	&__label {
+		@include caption(false);
+		border: 2px solid paint(accent);
+		border-radius: 100rem;
+		color: paint(accent);
+		cursor: pointer;
+		font-weight: 700;
+
+		margin: 0;
+		padding: rem(4 8);
+		transition: $transition-standard;
+
+		&:hover,
+		&:focus {
+			box-shadow: rem(0 4 8) rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__input {
+		display: none;
+
+		&:checked {
+			~ .block-library__label {
+				background-color: paint(accent);
+				color: $white;
+			}
+		}
+	}
+
+	&:not(.hide-hover-labels) {
+		~ .page-content {
+			> *[data-block-title] {
+				&::before {
+					@include body-2(false);
+					background-color: #f0f0f0;
+					border: 1px solid #e0e0e0;
+					color: #1e1e1e;
+					content: attr(data-block-title);
+					display: block;
+					font-weight: 600;
+					left: 0;
+					opacity: 0;
+					padding: rem(20 1);
+					pointer-events: none;
+					position: absolute;
+					text-orientation: sideways;
+					top: 0;
+					transform: scale(-1);
+					transition: opacity 0.2s ease-in-out;
+					white-space: nowrap;
+					writing-mode: vertical-rl;
+					z-index: 9999;
+				}
+
+				&:hover {
+					&::before {
+						opacity: 1;
+						pointer-events: auto;
+					}
+				}
+			}
+		}
+	}
+}

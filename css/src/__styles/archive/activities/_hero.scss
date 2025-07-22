@@ -1,0 +1,66 @@
+.activities-hero {
+    margin-bottom: responsive-values(55, 100);
+
+    &__top {
+        display: flex;
+        align-items: flex-end;
+
+        min-height: responsive-values(329, 532);
+        padding-top: rem(140);
+
+        position: relative;
+
+        &::after {
+            content: '';
+
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.71%, rgba(0, 0, 0, .4) 100%);
+        }
+    }
+
+    &__bottom {
+        margin-top: responsive-values(37, 75);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        margin-bottom: responsive-values(22, 59);
+
+        text-align: center;
+        color: paint(bg-light);
+    }
+
+    &__desc {
+        max-width: rem(850);
+
+        margin: 0 auto;
+
+        font-family: $font-baskerville;
+        font-size: responsive-values(20, 24);
+        line-height: responsive-values(24, 40);
+    }
+}

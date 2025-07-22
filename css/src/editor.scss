@@ -1,0 +1,72 @@
+.block-editor-block-list__layout {
+	@import "./style";
+	@import "__editor/init";
+
+	// Fix spacing issues that should not apply in the editor
+	.acf-block {
+		margin: 0 !important;
+
+		> .container,
+		> div > .container,
+		> .container-fluid,
+		> div > .container-fluid {
+			margin: 0 !important;
+			padding: 0 !important;
+
+			.editor-full-width {
+				flex: 0 0 100% !important;
+				max-width: 100% !important;
+			}
+		}
+	}
+
+	ul.is-style-check-icon {
+
+		> li {
+			position: relative;
+
+			&::marker {
+				content: none;
+			}
+
+			&::before {
+				content: '';
+				width: rem( 17 );
+				height: rem( 17 );
+				position: absolute;
+				top: rem( 6 );
+				left: rem( -17 );
+
+				@include media-breakpoint-up(md) {
+					left: rem( -22 );
+				}
+
+				border: none;
+				background-color: paint(accent);
+				border-radius: 50%;
+			}
+
+			&::after {
+				content: '';
+				display: inline-block;
+				width: rem( 5 );
+				height: rem( 9 );
+				position: absolute;
+				top: rem( 9 );
+				left: rem( -11 );
+				transform: rotate(45deg);
+				border-right: 2px solid paint(bg-light);
+				border-bottom: 2px solid paint(bg-light);
+
+				@include media-breakpoint-up(md) {
+					left: rem( -16 );
+				}
+			}
+		}
+	}
+}
+
+.block-editor-block-preview__container.editor-styles-wrapper {
+	height: 100% !important;
+	cursor: pointer;
+}

@@ -1,0 +1,75 @@
+/* Slider Global */
+.slick-arrow {
+    width: rem( 32 );
+    height: rem( 32 );
+    padding: 0;
+
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+
+    border: none;
+    border-radius: 50%;
+    background: paint(bg-light);
+    box-shadow: none;
+    cursor: pointer;
+
+    transition: $transition-standard;
+
+    @include media-breakpoint-up(md) {
+        width: rem( 48 );
+        height: rem( 48 );
+    }
+
+    &:hover {
+        &:after {
+            color: paint(accent-variant);
+        }
+    }
+
+    &:after {
+        content: '';
+
+        line-height: rem( 32 );
+        color: paint(accent);
+
+        transition: $transition-standard;
+
+        @include media-breakpoint-up(md) {
+            line-height: rem( 48 );
+        }
+    }
+
+    &.slick-prev {
+        left: rem( 30 );
+
+        &:after {
+            @include icon-font( $icon-chev-left, 1.25rem );
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+    &.slick-next {
+        right: rem( 30 );
+
+        &:after {
+            @include icon-font( $icon-chev-right, 1.25rem );
+
+            @include media-breakpoint-up(md) {
+                font-size: 2.25rem;
+            }
+        }
+    }
+}
+
+.slick-slide {
+    outline: none;
+}

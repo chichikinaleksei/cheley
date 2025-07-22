@@ -1,0 +1,134 @@
+.main-header {
+	$root: &;
+
+	position: sticky;
+	z-index: 102;
+	top: 0;
+
+	background-color: white;
+
+	&__logo {
+		display: block;
+
+		max-width: rem(100);
+
+		position: absolute;
+		z-index: 2;
+		top: rem(12);
+		left: rem(10);
+
+		@include media-breakpoint-up (md) {
+			top: rem(14);
+			left: rem(40);
+		}
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			top: rem(6);
+			left: rem(24);
+
+			max-width: rem(237);
+			transform: none;
+		}
+	}
+
+	&__bottom {
+		min-height: rem(55);
+
+		position: relative;
+
+		background-color: $white;
+
+		@include media-breakpoint-up (md) {
+			min-height: rem(57);
+		}
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			display: flex;
+			justify-content: space-between;
+
+			padding-left: rem(150);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-left: rem(289);
+		}
+
+		&:after {
+			content: '';
+			pointer-events: none;
+
+			display: block;
+
+			width: 100%;
+			height: calc(100% + 4.4vw);
+
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			background-image: url('../../images/header/mobile-decorator-alt.svg');
+			background-repeat: no-repeat;
+			background-position: bottom;
+			background-size: 100% auto;
+
+			@include media-breakpoint-up (md) {
+				height: calc(100% + #{rem(29)});
+
+				background-image: url('../../images/header/tablet-decorator.svg');
+			}
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				height: auto;
+
+				bottom: rem(-23);
+
+				background-image: url('../../images/header/desktop-decorator.png');
+				width: auto;
+				right: var(--header--cta-width);
+			}
+		}
+
+		> #{$root} {
+			&__nav {
+				display: none;
+
+				@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+					display: block;
+				}
+			}
+
+			&__back,
+			&__mobile-title {
+				@include media-breakpoint-up (md) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&__right {
+		display: none;
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			display: flex;
+		}
+	}
+
+	&.open {
+		#{$root} {
+			&__bottom {
+				&:after {
+					z-index: 1;
+				}
+			}
+		}
+	}
+}

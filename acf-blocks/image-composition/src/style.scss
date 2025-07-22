@@ -1,0 +1,40 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-img-comp {
+
+	.row {
+		margin: 0;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(30);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	[class*='col'] {
+		padding: 0 0 rem(20);
+
+		@include media-breakpoint-up(md) {
+			padding: 0 rem(15);
+		}
+	}
+}
+
+.block-img-single {
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	&.small-top {
+		padding-bottom: rem(20);
+
+		@include media-breakpoint-up(md) {
+			padding-bottom: rem(30);
+		}
+	}
+}

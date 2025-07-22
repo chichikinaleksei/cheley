@@ -1,0 +1,47 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-related-posts {
+	padding: rem(72) 0;
+
+	background-color: paint(neutral-97);
+
+	@include media-breakpoint-up(lg) {
+		padding: rem(152) 0 rem(127);
+	}
+
+	& + .block-full-width-background {
+		margin-top: rem(-30);
+
+		@include media-breakpoint-up (md) {
+			margin-top: rem(-73);
+		}
+	}
+}
+
+.related-posts {
+	& > .container > .row {
+		row-gap: rem(40);
+
+		> div {
+			@include media-breakpoint-down(sm) {
+				padding: 0 rem(20);
+			}
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		margin-bottom: rem(38);
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(72);
+		}
+	}
+
+	&__title {
+		margin: 0;
+	}
+}

@@ -1,0 +1,54 @@
+.inpage-nav {
+	position: sticky;
+	top: var(--header-height);
+	left: 0;
+	width: 100%;
+	background-color: paint(accent-variant);
+	z-index: 3;
+	margin-bottom: rem(56);
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: rem(76);
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		height: rem(56);
+		align-items: center;
+	}
+
+	&__list {
+		overflow: auto;
+		display: flex;
+	}
+
+	&__list-item {
+		min-width: fit-content;
+		&:not(:last-child) {
+			margin-right: responsive-values(20, 50);
+		}
+
+		a:focus {
+			color: paint(text-light);
+		}
+
+		&.active {
+			a,
+			a:focus {
+				color: paint(neutral-70);
+			}
+		}
+	}
+
+	&__item {
+		color: paint(text-light);
+		font-size: rem(16);
+		line-height: rem(24);
+		font-weight: 400;
+
+		&:hover {
+			color: paint(neutral-70);
+		}
+	}
+}

@@ -1,0 +1,161 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	list-style: none;
+
+	&__item {
+		margin: 0 rem(2.5);
+
+		&--ellipses {
+			min-width: rem(32);
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(40);
+		height: rem(40);
+
+		color: $dark;
+
+		border-radius: 50%;
+
+		@include pagination-number;
+
+		&:hover {
+			color: paint(text-light);
+
+			background: paint(accent);
+		}
+	}
+}
+
+.pagination__item--current {
+	.pagination__link {
+		color: paint(text-light);
+
+		background: paint(accent);
+	}
+}
+
+// eight29 filters pagination
+.eight29-pagination {
+	max-width: 100%;
+
+	overflow: auto;
+
+	.eight29-pagination-list {
+		ul {
+			align-items: center;
+
+			padding: 0 !important;
+
+			li {
+				margin: 0 rem(1.2) !important;
+			}
+
+			li:not(.first-item):not(.last-item)::before {
+				content: none !important;
+			}
+
+			li.first-item {
+				padding-right: rem(44);
+
+				&::after {
+					position: absolute;
+					top: rem(1);
+					right: rem(-2);
+				}
+			}
+
+			li.last-item {
+				padding-left: rem(44);
+
+				&::before {
+					position: absolute;
+					top: rem(1);
+					left: rem(-2);
+
+					letter-spacing: rem(-0.8);
+				}
+			}
+		}
+	}
+
+	.pagination-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(40);
+		height: rem(40);
+		padding: 0;
+
+		font-size: rem(16);
+		font-weight: 700;
+		line-height: rem(16);
+
+		transition: color 0.3s, background-color 0.3s;
+
+		&:not(.current-page) {
+			&:hover {
+				color: paint(text-dark);
+
+				background-color: paint(neutral-94);
+			}
+		}
+	}
+
+	.current-page {
+		pointer-events: none;
+
+		color: $white;
+
+		background: paint(accent) !important;
+	}
+
+	.eight29-pagination-arrow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(40);
+		height: rem(40);
+
+		position: relative;
+
+		font-size: 0;
+		color: paint(text-dark);
+
+		border-radius: 100%;
+
+		transition: opacity 0.3s;
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	.eight29-pagination-prev {
+		.eight29-pagination-arrow {
+			&::after {
+				transform: scaleX(-1);
+
+				@include icon-font($icon-chevron-right, rem(14));
+			}
+		}
+	}
+
+	.eight29-pagination-next {
+		.eight29-pagination-arrow {
+			&::after {
+				@include icon-font($icon-chevron-right, rem(14));
+			}
+		}
+	}
+}

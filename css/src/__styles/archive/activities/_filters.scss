@@ -1,0 +1,182 @@
+.activities-archive-filters {
+	position: relative;
+	margin: responsive-values(40, 80) 0 responsive-values(32, 130);
+
+	.c-btn-wrapper {
+		margin-top: responsive-values(32, 80);
+	}
+
+	.eight29-sidebar {
+		width: calc(100% + #{rem(40)});
+		padding-left: rem(20);
+
+		position: relative;
+		margin-bottom: responsive-values(48, 64) !important;
+		margin-left: rem(-20);
+
+		@include media-breakpoint-up(md) {
+			width: 100%;
+			padding-left: 0;
+
+			margin-left: 0;
+		}
+
+		&::after {
+			content: "";
+
+			width: calc(100% - #{rem(20)});
+			height: rem(1);
+
+			position: absolute;
+			z-index: -1;
+			bottom: rem(1);
+			left: rem(20);
+
+			background-color: paint(neutral-88);
+
+			@include media-breakpoint-up(md) {
+				width: 100%;
+
+				left: 0;
+			}
+		}
+	}
+
+	.eight29-filter-list.left-content {
+		margin: 0;
+	}
+
+	.eight29-filter {
+		max-width: 100% !important;
+	}
+
+	.accordion-select {
+		.eight29-filter-label {
+			display: none !important;
+		}
+
+		//simplebar
+		.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+			&::before {
+				background: rgb(0 0 0 / 30%);
+			}
+		}
+
+		.simplebar-wrapper {
+			max-height: unset !important;
+		}
+
+		& > div {
+			margin-top: 0 !important;
+		}
+
+		.dropdown-container {
+			display: block;
+
+			width: 100%;
+			height: auto;
+			max-width: 100% !important;
+
+			position: relative;
+			z-index: unset;
+			right: auto;
+			left: auto;
+
+			border: 0;
+			border-radius: 0;
+			background: transparent;
+			cursor: pointer;
+			overflow: visible;
+		}
+
+		.dropdown-list {
+			display: flex;
+
+			width: max-content;
+
+			position: relative;
+
+			text-align: center;
+
+			list-style: none;
+
+			& > li {
+				display: inline-block !important;
+
+				width: auto !important;
+				height: auto !important;
+				padding: 0 !important;
+
+				margin: 0 responsive-values(22, 45) 0 0 !important;
+
+				text-align: center;
+
+				border: none !important;
+
+				& > button {
+					display: block;
+
+					height: 100%;
+					padding: 0 0 responsive-values(20, 17) 0;
+
+					position: relative;
+
+					font-size: responsive-values(14, 18);
+					font-weight: 500;
+					line-height: responsive-values(16, 24);
+					color: paint(text-dark);
+					white-space: nowrap;
+					text-decoration: none !important;
+
+					border: none;
+					background-color: unset !important;
+					box-shadow: none;
+
+					transition: color 0.3s;
+
+					&::after {
+						content: "";
+
+						width: 100%;
+						height: rem(2);
+
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						transform: scaleX(0);
+						transform-origin: left;
+
+						background-color: paint(accent);
+
+						transition: transform 0.3s;
+					}
+
+					&:hover,
+					&.active {
+						color: paint(accent);
+
+						border-color: paint(accent);
+
+						&::after {
+							transform: scaleX(1);
+						}
+					}
+				}
+			}
+		}
+
+		.dropdown-current {
+			display: none !important;
+
+			& + div {
+				display: flex;
+
+				width: 100%;
+				padding: 0;
+
+				z-index: 2;
+				margin-top: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.mega-menu {
+	&-image {
+		$root: &;
+		padding: rem(10) 0 rem(6);
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			display: inline-block;
+
+			padding: 0;
+
+			position: relative;
+
+			&:hover {
+				#{$root}__btn {
+					color: paint(accent-variant);
+
+					background-color: paint(neutral-97);
+				}
+
+				#{$root}__img {
+					opacity: .8;
+				}
+			}
+		}
+
+		&__btn {
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				display: block;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				padding: rem(15) rem(16) rem(15) rem(14);
+
+				color: paint(accent);
+				text-transform: uppercase;
+
+				border-bottom: rem(1) solid paint(neutral-88);
+
+				@include font(14, 24, 700, 1);
+
+				&:before {
+					content: '';
+
+					display: block;
+
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+				}
+
+				&:after {
+					@include icon-font($icon-arrow-forward, rem(13));
+				}
+			}
+
+			&[target="_blank"] {
+				&::after {
+					@include icon-font( $icon-launch-external );
+				}
+			}
+		}
+
+		&__img {
+			display: none;
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				display: block;
+
+				max-width: none;
+				transition: opacity $transition-default;
+			}
+		}
+	}
+}

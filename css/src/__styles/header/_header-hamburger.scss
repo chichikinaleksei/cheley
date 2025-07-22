@@ -1,0 +1,102 @@
+.btn-hamburger {
+	$root: &;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	width: rem(40);
+	height: rem(40);
+	padding: 0;
+
+	position: absolute;
+	z-index: 9999;
+	top: rem(7);
+	right: rem(12);
+
+	border: none;
+	outline: 0;
+	background: transparent;
+	box-shadow: none;
+	cursor: pointer;
+
+	transition: $transition-default background-color, $transition-default transform, $transition-default border-color;
+
+	@include media-breakpoint-up (md) {
+		top: rem(11);
+		right: rem(32);
+	}
+
+	@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+		display: none;
+	}
+
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
+
+	&__icon {
+		width: rem(20);
+		height: rem(12);
+
+		position: relative;
+
+		span {
+			display: block;
+
+			width: rem(20);
+			height: rem(2);
+
+			position: absolute;
+			left: 0;
+			transform: rotate(0deg);
+
+			border-radius: rem(9);
+			background: paint(text-dark);
+			opacity: 1;
+
+			transition: opacity .45s ease-in-out, transform .45s ease-in-out, top .45s ease-in-out, left .45s ease-in-out, width .45s ease-in-out, background-color $transition-default;
+
+
+			&:nth-child(1) {
+				top: 0;
+				transform-origin: left center;
+			}
+
+			&:nth-child(2) {
+				top: rem(6);
+				transform-origin: left center;
+			}
+
+			&:nth-child(3) {
+				top: rem(12);
+				transform-origin: left center;
+			}
+		}
+	}
+
+	&.open {
+		#{$root}__icon {
+			span {
+				&:nth-child(1) {
+					top: rem(-1);
+					left: rem(2);
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(2) {
+					width: 0;
+
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					top: rem(13);
+					left: rem(2);
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+}

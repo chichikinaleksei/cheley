@@ -1,0 +1,86 @@
+/****************
+ * Fonts
+ ****************/
+$font-base: "brother-1816-printed", sans-serif;
+$font-baskerville: "baskerville-urw", serif;
+$font-austin-pen: "austin-pen", serif;
+$font-open: "Open Sans", sans-serif;
+
+/****************
+ * Paints
+ ****************/
+$paints: (
+	accent: #377e96,
+	accent-variant: #004965,
+	accent-variant-2: #476796,
+	accent-variant-3: #cc4a27,
+	bg-dark: #000000,
+	bg-light: #ffffff,
+	bg-light-2: #dde5f2,
+	text-dark: #021b27,
+	text-light: #ffffff,
+	neutral-30: #4d4d4d,
+	neutral-45: #737373,
+	neutral-70: #b3b3b3,
+	neutral-88: #e1e1e1,
+	neutral-94: #f0f0f0,
+	neutral-97: #f7f7f7,
+	error: #b00020,
+	warning: #f9a513,
+	success: #008737,
+	information: #006bb2,
+	autofill: #e6f0f7,
+	forestgreen: #153e0e,
+	bg-forestgreen: #014900,
+	light-blue: #9ec5ff,
+	dark-blue: #004a64,
+);
+
+/****************
+ * Effects
+ ****************/
+$effects: (
+	dropshadow: 0 0 10px rgba(0, 0, 0, .1),
+	cta: 0 -4px 4px rgba(0, 0, 0, .05),
+	text-shadow: 0 4px 4px rgba(0, 0, 0, .25),
+);
+
+/****************
+ * Grid Settings
+ ****************/
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: rem(576),
+	md: rem(768),
+	lg: rem(992),
+	xl: rem(1200),
+	xxl: rem(1410),
+);
+$custom-breakpoints: (
+	mobileMenu: rem(1200),
+);
+$container-max-widths: (
+	xs: rem(576),
+	sm: rem(768),
+	md: rem(992),
+	lg: rem(1200),
+	xl: rem(1410),
+);
+$container-sm-spacing: rem(20);
+$container-md-spacing: rem(40);
+$container-lg-spacing: rem(60);
+$grid-gutter-width: rem(30);
+
+// Transitions
+$transition-standard: all .2s linear;
+$transition-default: .2s linear;
+
+// Block title
+$block-title-mb-sm: rem(40);
+$block-title-mb-md: rem(64);
+$media-margin: 30px;
+$media-margin-mobile: 20px;
+
+// Outline
+$outline: rem(2) solid #7aacfe;

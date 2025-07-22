@@ -1,0 +1,32 @@
+.page-404 {
+	padding: responsive-values(40, 160) 0 responsive-values(6, 60);
+
+	&__preheader,
+	&__header {
+		max-width: rem(850);
+	}
+
+	&__preheader {
+		margin: 0 auto rem(2);
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(-4);
+		}
+	}
+
+	&__header {
+		margin: 0 auto rem(45);
+	}
+
+	&__buttons {
+		.c-btn {
+			&:not(:last-child) {
+				margin-bottom: rem(17);
+
+				@include media-breakpoint-up(sm) {
+					margin-right: rem(30);
+				}
+			}
+		}
+	}
+}

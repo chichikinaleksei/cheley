@@ -1,0 +1,133 @@
+.mega-menu {
+	&-item {
+		pointer-events: auto;
+
+		position: static;
+
+		&.mmc-wp-menu-with-title {
+			border-bottom: rem(1) solid paint(neutral-88);
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				padding-top: rem(5);
+
+				border: none;
+			}
+		}
+
+		&.mmc-wp-menu:not(.mmc-wp-menu-with-title) {
+			order: 1;
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				order: unset;
+			}
+		}
+
+		&.mmc-wp-image-button + .mmc-wp-menu {
+			margin-top: rem(-6);
+
+			@include media-breakpoint-up (md) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&-title-trigger {
+		@include menu_item();
+
+		border: none;
+
+		&:after {
+			@include icon-font($icon-chev-expand);
+
+			transition: transform $transition-default;
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				display: none;
+			}
+		}
+
+		a {
+			width: max-content;
+		}
+
+		& + div {
+			display: none;
+			flex-direction: column;
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				display: block;
+
+				position: static;
+			}
+		}
+
+		&.active {
+			& + div {
+				display: flex;
+			}
+
+			&:after {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&-wrapper {
+		display: none;
+		flex-direction: column;
+
+		width: 100%;
+		padding-top: rem(23);
+		padding-bottom: rem(20);
+
+		position: absolute;
+		top: 0;
+		left: 100%;
+
+		opacity: 0;
+		visibility: hidden;
+
+		transition: $transition-default opacity, $transition-default visibility;
+
+		@include media-breakpoint-up (md) {
+			padding-top: rem(72);
+			padding-bottom: rem(30);
+
+			background: white;
+		}
+
+		@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+			padding-top: rem(64);
+			padding-bottom: 0;
+			padding-bottom: rem(69);
+
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+
+			box-shadow: rem(0) rem(4) rem(4) rem(0) rgba(0, 0, 0, .05);
+		}
+
+		.container {
+			@include media-breakpoint-down (lg) {
+				padding-right: rem(20);
+				padding-left: rem(20);
+			}
+
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				max-width: rem(1403);
+			}
+		}
+
+		.row {
+			@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+				justify-content: center;
+			}
+		}
+	}
+}
+
+@import 'mega-menu-menus';
+@import 'mega-menu-contents';
+@import 'mega-menu-image';
+@import 'mega-menu-icons';

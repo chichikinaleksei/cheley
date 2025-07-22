@@ -1,0 +1,204 @@
+.blog-archive-filters {
+    position: relative;
+    z-index: 1;
+    margin-bottom: responsive-values(47, 162);
+
+    .eight29-app,
+    .eight29-app > :first-child {
+        margin-bottom: 0 !important;
+    }
+
+    .eight29-filter .accordion-select .eight29-filter-label {
+        display: none;
+    }
+
+    .eight29-filter .accordion-select .eight29-filter-label + div {
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+    }
+
+    .sidebar-top .eight29-filter-group > .filter-search {
+        @include media-breakpoint-up(lg) {
+            max-width: rem(270) !important;
+
+            margin-bottom: 0;
+        }
+    }
+
+    .sidebar-top .eight29-filter,
+    .sidebar-bottom .eight29-filter {
+        @include media-breakpoint-up(xl) {
+            max-width: rem(308) !important;
+
+            margin-right: rem(20);
+        }
+
+        &:first-of-type {
+            .dropdown-container {
+                z-index: 2;
+            }
+        }
+
+        &:not(:first-of-type) {
+            margin-top: rem(80);
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    // Search
+    .eight29-filter.filter-search .filter-input {
+        height: auto;
+    }
+
+    .eight29-filter input[type="search"] {
+        padding: rem(16) rem(48) rem(16) rem(44);
+
+        color: paint(bg-dark);
+        text-overflow: ellipsis;
+
+        border: rem(1) solid paint(neutral-70);
+        background: $white url(../../images/icons/search.svg) no-repeat rem(12) center;
+
+        &::placeholder {
+            color: paint(neutral-45);
+        }
+
+        &:focus,
+        &:hover {
+            border-color: paint(accent);
+        }
+    }
+
+    // Filter List
+    .eight29-filter-list {
+        min-height: rem(111);
+
+        margin-bottom: rem(33);
+
+        @include media-breakpoint-up(xl) {
+            min-height: rem(56);
+
+            margin-bottom: 0;
+        }
+    }
+
+    [data-simplebar] {
+        top: rem(8);
+
+        border: rem(1) solid paint(neutral-94);
+        border-radius: rem(2);
+        background-color: $white;
+        box-shadow: 0 0 rem(10) rgba(0, 0, 0, .1);
+    }
+
+    .simplebar-content-wrapper {
+        padding-right: 0 !important;
+    }
+
+    .eight29-filter .dropdown-container {
+        height: rem(48);
+
+        z-index: 1;
+
+        border: none;
+        background-color: transparent;
+
+        &.open {
+            overflow: visible;
+
+            .dropdown-current {
+                border-color: paint(accent);
+            }
+        }
+    }
+
+    .eight29-filter .dropdown-container .dropdown-current {
+        padding: rem(16) rem(44) rem(16) rem(11);
+
+        color: paint(text-dark);
+
+        border: rem(1) solid paint(neutral-70);
+        background-color: $white;
+
+        transition: border-color .3s;
+
+        &:hover {
+            border-color: paint(accent);
+        }
+    }
+
+    .eight29-filter .dropdown-container .dropdown-current:after {
+        width: unset;
+        height: unset;
+
+        top: rem(11);
+        right: rem(11);
+
+        color: paint(text-dark);
+
+        background: none;
+
+        @include icon-font($icon-drop-down);
+    }
+
+    .eight29-filter .dropdown-container ul.dropdown-list > li {
+        height: auto;
+    }
+
+    .eight29-filter .dropdown-container ul.dropdown-list > li {
+        padding: 0;
+
+        border: none;
+    }
+
+    .eight29-filter .accordion-select ul.dropdown-list > li > button {
+        padding: rem(5) rem(12.99);
+
+        color: paint(bg-dark);
+
+        &:hover,
+        &.active {
+            text-decoration: none;
+
+            background-color: paint(neutral-94);
+        }
+    }
+
+    .eight29-filter .accordion-select ul {
+        padding: rem(8) 0;
+    }
+
+    .eight29-filter .dropdown-container .simplebar-wrapper {
+        max-height: rem(456);
+    }
+
+    .sidebar-top .eight29-sidebar {
+        margin-bottom: rem(40);
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: rem(120);
+        }
+    }
+
+    .eight29-posts {
+        margin-bottom: responsive-values(64, 22);
+
+        @include media-breakpoint-up(xl) {
+            gap: rem(44) rem(30);
+        }
+    }
+
+    .eight29-posts-container:first-child {
+        @include media-breakpoint-up(xl) {
+            padding-top: rem(40);
+        }
+    }
+
+    .eight29-pagination {
+        margin-top: responsive-values(64, 120) !important;
+    }
+}

@@ -1,0 +1,22 @@
+.share-icons {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: rem( -8 );
+
+	&__link {
+		border-radius: 50%;
+		width: rem( 48 );
+		height: rem( 48 );
+		text-decoration: none;
+		background: paint(neutral-88);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 rem( 8 );
+
+		span {
+			font-size: rem( 24 );
+			color: paint(text-dark);
+		}
+	}
+}

@@ -1,0 +1,96 @@
+@import "../../../css/src/lib/base-includes";
+@import "tabs";
+
+.block-image-content-tabs {
+	position: relative;
+
+	overflow: hidden;
+
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: rem(4);
+		margin-bottom: rem(99);
+	}
+
+	.tabs {
+		&__link-list-wrapper {
+			position: relative;
+			&.has-scroll {
+				&::before {
+					display: block;
+				}
+			}
+		}
+		&__link-list {
+			padding: 0;
+
+			position: relative;
+			z-index: 2;
+			margin: 0;
+
+			white-space: nowrap;
+
+			overflow-x: auto;
+			display: flex;
+			max-width: 100%;
+		}
+
+		&__link {
+			display: inline-block;
+
+			margin: 0;
+
+			font-size: rem(14);
+			line-height: rem(24);
+			font-weight: 500;
+			border: rem(1) solid paint(neutral-88);
+			border-left: none;
+			width: 100%;
+
+			a {
+				display: block;
+
+				min-width: rem(130);
+				padding: rem(16) rem(0) rem(14);
+
+				position: relative;
+
+				text-align: center;
+				color: paint(neutral-30);
+				text-decoration: none;
+				text-transform: uppercase;
+
+				transition: $transition-standard;
+				letter-spacing: rem(1);
+
+				@include media-breakpoint-up(lg) {
+					padding: rem(35) rem(20);
+					letter-spacing: rem(2);
+				}
+
+				&:hover {
+					font-weight: 700;
+					color: paint(dark-blue);
+				}
+			}
+
+			&.active {
+				a {
+					color: paint(accent-variant);
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	.tab-head-wrap {
+		position: relative;
+	}
+
+	& + .block-activities-highlights {
+		margin-top: rem(-22);
+
+		@include media-breakpoint-up(xxl) {
+			margin-top: rem(99);
+		}
+	}
+}

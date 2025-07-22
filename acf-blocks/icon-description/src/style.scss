@@ -1,0 +1,132 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-icon-descriptions {
+    margin: rem( 64 ) 0 rem( 53 );
+
+    @include media-breakpoint-up(md) {
+        margin: rem( 80 ) 0 rem( 148 );
+    }
+    .container {
+        text-align: center;
+    }
+    &__section-title {
+        width: fit-content;
+        padding: rem( 11 ) 0 rem( 11 );
+
+        margin: 0 auto rem( 44 );
+        margin-bottom: responsive-values( 32 , 68 );
+
+        font-family: $font-base;
+        font-size: rem( 14 );
+        font-weight: 400;
+        line-height: rem( 16 );
+        text-align: center;
+        letter-spacing: rem( 3 );
+        text-transform: uppercase;
+
+        border-top: rem( 1 ) solid paint(neutral-88);
+        border-bottom: rem( 1 ) solid paint(neutral-88);
+    }
+
+    &__icon-col {
+        text-align: center;
+    }
+
+    &__icon {
+        min-height: rem(139);
+
+        position: relative;
+        margin-bottom: rem( 20 );
+
+        @include media-breakpoint-up( xxl ) {
+            margin-bottom: rem( 32 );
+        }
+        @include media-breakpoint-up(xxl) {
+            height: rem( 289 );
+        }
+
+        img {
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            object-fit: contain;
+            @include media-breakpoint-up(xl) {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__icon-col-text-wrap {
+        max-width: rem( 300 );
+
+        margin: 0 auto;
+
+        @include media-breakpoint-up(lg) {
+            max-width: 100%;
+        }
+    }
+
+    &__pre-header.overline {
+        margin-bottom: rem( 12 );
+    }
+
+    &__header {
+        margin-bottom: responsive-values( 20 , 20 );
+
+        text-align: center;
+        &::after {
+            content: "";
+
+            display: block;
+
+            width: rem( 50 );
+            height: rem( 1 );
+
+            margin: rem( 20 ) auto 0;
+
+            background-color: paint(neutral-70);
+        }
+    }
+
+    .slick-dots {
+        padding: 0;
+
+        margin-top: rem( 18 );
+
+        text-align: center;
+
+        list-style: none;
+        li {
+            display: inline-block;
+            button {
+                width: rem( 10 );
+                height: rem( 10 );
+                padding: 0;
+
+                font-size: 0;
+
+                border: rem( 1 ) solid paint(accent);
+                border-radius: 50%;
+                background-color: transparent;
+
+                transition: background-color .2s;
+            }
+
+            &.slick-active {
+                button {
+                    background-color: paint(accent);
+                }
+            }
+
+            &:not(:last-child) {
+                margin-right: rem( 15 );
+            }
+        }
+    }
+}

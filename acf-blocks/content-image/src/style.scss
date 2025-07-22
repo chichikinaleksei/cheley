@@ -1,0 +1,205 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-content-image {
+    margin: rem( 80 ) 0 rem( 46 );
+
+    @include media-breakpoint-up(md) {
+        margin: rem( 160 ) 0 rem( 120 );
+    }
+
+    & + & {
+        margin-top: rem( -8 );
+
+        @include media-breakpoint-up(md) {
+            margin-top: rem( -120 );
+        }
+    }
+    .overline {
+        margin: 0 0 rem( 4 );
+
+        @include media-breakpoint-up(md) {
+            margin: 0 0 rem( 9 );
+        }
+    }
+    h2 {
+        margin-top: 0;
+    }
+
+    blockquote {
+        max-width: rem( 410 );
+        padding: 0;
+
+        margin-top: rem( -10 );
+
+        border-left: 0;
+
+        @include media-breakpoint-up(md) {
+            margin: rem( 80 ) 0 0;
+        }
+
+        p {
+            color: paint(neutral-45);
+        }
+    }
+
+    &.has-container {
+        background: transparent;
+
+        .row {
+            margin: 0;
+        }
+
+        .b-content-images__content-wrapper {
+            max-width: rem( 520 );
+
+            left: 0;
+
+            @include media-breakpoint-down(lg) {
+                max-width: rem( 375 );
+            }
+            @include media-breakpoint-down(md) {
+                max-width: rem( 500 );
+            }
+        }
+
+        .b-content-images__col {
+            &.content-right {
+                .b-content-images__content-wrapper {
+                    left: 0;
+                }
+            }
+        }
+
+        .image-right .b-content-images__image.img-textured::after,
+        .image-left .b-content-images__image.img-textured::after {
+            background-image: url('../../../images/content-image/texture-left.svg'), url('../../../images/content-image/texture-right.svg');
+            background-position: left center, right center;
+        }
+    }
+}
+
+.b-content-images {
+    &__content-wrapper {
+        max-width: rem( 520 );
+        padding: rem( 122 ) 0;
+
+        position: relative;
+        left: rem( 32 );
+        margin: 0 auto;
+
+        @include media-breakpoint-down(xl) {
+            max-width: rem( 500 );
+
+            left: auto;
+            margin: 0 auto;
+        }
+        @include media-breakpoint-down(md) {
+            padding: rem( 24 ) 0 rem( 27 );
+        }
+    }
+
+    &__col-img {
+        @include media-breakpoint-down(lg) {
+            padding: 0;
+        }
+        @include media-breakpoint-up(lg) {
+            align-self: stretch;
+
+            position: relative;
+        }
+    }
+
+    &__image {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            overflow: hidden;
+        }
+
+        &.img-textured {
+            &:before,
+            &:after {
+                content: "";
+
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                background-repeat: no-repeat;
+            }
+
+            &::after {
+                display: none;
+
+                background-size: auto 100%;
+
+                @include media-breakpoint-up(lg) {
+                    display: block;
+                }
+            }
+
+            &::before {
+                width: 100%;
+
+                background-image: url('../../../images/content-image/texture-top.svg'), url('../../../images/content-image/texture-bottom.svg');
+                background-position: center top, center bottom;
+                background-size: 100%;;
+            }
+        }
+
+        img {
+            width: 100%;
+
+            @include media-breakpoint-up(lg) {
+                height: 100%;
+
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                object-fit: cover;
+            }
+        }
+    }
+
+    .image-left &__image.img-textured::after {
+        background-image: url('../../../images/content-image/texture-right.svg');
+        background-position: right center;
+    }
+
+    .image-right &__image.img-textured::after {
+        background-image: url('../../../images/content-image/texture-left.svg');
+        background-position: left center;
+    }
+
+
+    &__col {
+        &.image-left {
+            padding: 0;
+        }
+
+        &.image-right {
+            padding: 0;
+        }
+
+        &.content-right {
+            .b-content-images__content-wrapper {
+                left: rem( -37 );
+                margin: 0 auto;
+
+                @include media-breakpoint-down(xl) {
+                    left: auto;
+                }
+            }
+        }
+    }
+}

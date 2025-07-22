@@ -1,0 +1,16 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-grid-columns {
+	// margin-bottom: rem( 80 - 40 );
+
+	// @include media-breakpoint-up(md) {
+	// 	margin-bottom: rem( 160 - 40 );
+	// }
+}
+
+.grid-columns {
+
+	&__column {
+		// margin-bottom: rem( 40 );
+	}
+}

@@ -1,0 +1,17 @@
+.page-columns {
+    margin-top: rem( 46 );
+    margin-bottom: rem( 46 );
+
+@include media-breakpoint-up(md) {
+        margin-top: rem( 80 );
+        margin-bottom: rem( 74 );
+    }
+}
+
+.block-tabs + .page-columns {
+    margin-top: 0;
+
+    @include media-breakpoint-up(md) {
+        margin-top: rem( -30 );
+    }
+}

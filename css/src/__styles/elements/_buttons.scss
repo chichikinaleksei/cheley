@@ -1,0 +1,360 @@
+.c-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: rem(14);
+	font-weight: 700;
+	line-height: rem(24);
+	letter-spacing: rem(1);
+	text-transform: uppercase;
+
+	cursor: pointer;
+
+	appearance: none;
+
+	i {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(24);
+		height: rem(24);
+		min-width: rem(24);
+
+		line-height: 0;
+
+		&:before {
+			font-size: rem(12);
+			color: paint(accent);
+
+			transition: color .2s;
+		}
+	}
+
+	&.c-btn-icon-left {
+		flex-direction: row-reverse;
+
+		padding-left: rem(24);
+
+		position: relative;
+
+		i {
+			margin-right: rem(9);
+		}
+	}
+
+	&.c-btn-icon-right {
+		padding-right: rem(24);
+
+		position: relative;
+
+		i {
+			margin-left: rem(9);
+		}
+	}
+}
+
+.c-btn-primary,
+.c-btn-secondary {
+	padding: rem(14) rem(28);
+
+	border: 2px solid paint(accent);
+}
+
+.c-btn-primary {
+	color: paint(text-light);
+
+	background-color: paint(accent);
+
+	&:hover,
+	&:focus {
+		color: paint(text-light);
+
+		border-color: paint(accent-variant);
+		background-color: paint(accent-variant);
+	}
+
+	i:before {
+		color: paint(text-light);
+	}
+
+	&.c-btn-color-alt {
+		color: paint(accent);
+
+		border-color: paint(text-light);
+		background-color: paint(text-light);
+
+		i {
+			&::before {
+				color: paint(accent);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: paint(accent-variant);
+
+			i {
+				&::before {
+					color: paint(accent-variant);
+				}
+			}
+		}
+	}
+}
+
+.c-btn-primary--small,
+.c-btn-secondary--small {
+	padding: rem(8) rem(19);
+}
+
+.c-btn-primary--small,
+.c-btn-secondary--small,
+.c-btn-tertiary--small {
+	font-size: rem(12);
+	line-height: rem(16);
+	letter-spacing: rem(.5);
+
+	i {
+		height: rem(16);
+
+		&::before {
+			font-size: rem(10);
+		}
+	}
+
+	&.c-btn-icon-left {
+		padding-left: rem(12);
+
+		i {
+			margin-right: rem(4);
+		}
+	}
+
+	&.c-btn-icon-right {
+		padding-right: rem(12);
+
+		i {
+			margin-left: rem(4);
+		}
+	}
+}
+
+
+.c-btn-secondary {
+	color: paint(accent);
+
+	border-color: paint(accent);
+
+	&:hover,
+	&:focus {
+		color: paint(text-light);
+
+		border-color: paint(accent-variant);
+		background-color: paint(accent-variant);
+
+		i {
+			&::before {
+				color: paint(text-light);
+			}
+		}
+	}
+
+	&.c-btn-color-alt {
+		color: paint(text-light);
+
+		border-color: paint(text-light);
+
+		i {
+			&::before {
+				color: paint(text-light);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: paint(accent-variant);
+
+			background-color: paint(text-light);
+
+			i {
+				&::before {
+					color: paint(accent-variant);
+				}
+			}
+		}
+	}
+}
+
+.c-btn-tertiary {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0;
+
+    position: relative;
+
+    color: paint(accent);
+
+    &::after {
+        content: '';
+
+        width: 100%;
+        height: rem( 4 );
+
+        position: absolute;
+        bottom: rem( -4 );
+        left: 0;
+
+        border-top: 1px solid paint(accent);
+        border-bottom: 1px solid paint(accent);
+
+        transition: border-color .2s;
+    }
+
+    &:hover,
+    &:focus {
+        color: paint(accent-variant);
+
+        i {
+            &::before {
+                color: paint(accent-variant);
+            }
+        }
+
+        &::after {
+            border-color: paint(accent-variant);
+        }
+    }
+
+    &.c-btn-icon-left {
+        padding: 0;
+    }
+
+    &.c-btn-icon-right {
+        padding: 0;
+    }
+
+    &.c-btn-color-alt {
+        color: paint(text-light);
+        &::after {
+            border-color: paint(text-light);
+        }
+
+        i {
+            &::before {
+                color: paint(text-light);
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: paint(neutral-70);
+
+            &::after {
+                border-color: paint(neutral-70);
+            }
+
+            i {
+                &::before {
+                    color: paint(neutral-70);
+                }
+            }
+        }
+    }
+
+    &--small {
+        &::after {
+            border-bottom-color: paint(bg-dark);
+        }
+
+        &:hover,
+        &:focus {
+            &::after {
+                border-bottom-color: paint(bg-dark);
+            }
+        }
+    }
+}
+
+@mixin button-margins() {
+	margin: rem(24) 0 rem(32);
+
+	line-height: 1;
+
+	@include media-breakpoint-up(md) {
+		margin: rem(40) 0 rem(48);
+	}
+
+@include media-breakpoint-up(md) {
+        margin: rem( 40 ) 0 rem( 48);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-btn-wrapper {
+    @include button-margins;
+}
+
+.c-btn-group {
+	font-size: 0; // Prevent spaces between buttons.
+
+	@include button-margins;
+
+	.c-btn-wrapper {
+		display: inline-block;
+
+		margin: 0;
+
+		&:not(:last-child) .c-btn {
+			margin-right: rem(20);
+
+			&.c-btn-tertiary {
+				margin-right: rem(24);
+			}
+		}
+	}
+}
+
+button:focus {
+    outline: none;
+}
+
+.c-btn-back {
+	background: none;
+	border:none;
+	width: rem(25);
+	height: rem(25);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+
+	&::before {
+		@include icon-font($icon-arrow-left);
+		color: paint(text-dark);
+	}
+}
+
+.play-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: rem(56);
+	height: rem(56);
+
+	border: none;
+	border-radius: 50%;
+	background: paint(bg-light);
+
+	&::before {
+		@include icon-font($icon-play);
+
+		color: paint(text-dark);
+	}
+}

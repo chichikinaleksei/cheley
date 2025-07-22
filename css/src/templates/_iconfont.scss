@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "<%= fontName %>";
+    src: url('../../<%= fontPath %>/<%= fontName %>.eot?<%= fontCacheBuster %>');
+    src: url('../../<%= fontPath %>/<%= fontName %>.eot?<%= fontCacheBuster %>#iefix') format('eot'),
+      url('../../<%= fontPath %>/<%= fontName %>.woff2?<%= fontCacheBuster %>') format('woff2'),
+      url('../../<%= fontPath %>/<%= fontName %>.woff?<%= fontCacheBuster %>') format('woff'),
+      url('../../<%= fontPath %>/<%= fontName %>.ttf?<%= fontCacheBuster %>') format('truetype'),
+      url('../../<%= fontPath %>/<%= fontName %>.svg?<%= fontCacheBuster %>#<%= fontName %>') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import 'iconfont-variables';
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+	font-family: $font-iconfont;
+	font-size: $iconfont-size;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+<% _.each(glyphs, function(glyph) { %>
+.<%= className %>-<%= glyph.name %>::before {
+  content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>"
+}
+<% }); %>

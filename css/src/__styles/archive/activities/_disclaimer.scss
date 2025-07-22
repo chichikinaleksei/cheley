@@ -1,0 +1,15 @@
+.activities-archive-disclaimer {
+    margin: responsive-values(32, 130) 0 responsive-values(80, 160);
+
+    &__wrapper {
+        padding: responsive-values(31, 48) responsive-values(18, 48);
+
+        border: rem(1) solid paint(neutral-88);
+    }
+
+    &__title {
+        margin-bottom: responsive-values(16, 31);
+
+        color: paint(neutral-30);
+    }
+}

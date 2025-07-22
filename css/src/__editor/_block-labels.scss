@@ -1,0 +1,39 @@
+@at-root .block-editor-block-list__layout {
+
+	> div[data-title] {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		max-width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			padding-right: rem( 32 );
+		}
+
+		&::before {
+			content: attr(data-title);
+			background-color: #f0f0f0;
+			border: 1px solid #e0e0e0;
+			padding: rem( 20 ) rem( 1 );
+			display: block;
+			font-weight: 600;
+			writing-mode: vertical-rl;
+			text-orientation: sideways;
+			transform: scale(-1);
+			color: #1e1e1e;
+		}
+
+		> div {
+			flex-grow: 1;
+			max-width: rem( 840 );
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.block-editor-inner-blocks & {
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

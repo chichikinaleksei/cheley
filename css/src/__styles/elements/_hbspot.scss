@@ -1,0 +1,28 @@
+.hbspt-form {
+	fieldset {
+		max-width: unset !important;
+		margin-bottom: rem(16) !important;
+
+		h2 {
+			margin-top: responsive-values(43, 72) !important;
+		}
+
+		.input {
+			input, select, textarea {
+				width: 100% !important;
+			}
+		}
+
+		&.form-columns-2 {
+			.input {
+				input, select, textarea {
+					width: calc(100% - rem(8)) !important;
+				}
+			}
+		}
+	}
+}
+
+.block-hero--no-image + p form fieldset:nth-of-type(2) h2:first-of-type {
+	margin-top: 0 !important;
+}

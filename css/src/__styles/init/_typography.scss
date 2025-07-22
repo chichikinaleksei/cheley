@@ -1,0 +1,138 @@
+@include headings(2) {
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1,
+.h1 {
+	@include h1;
+}
+
+h2,
+.h2 {
+	@include h2;
+}
+
+h3,
+.h3 {
+	@include h3;
+}
+
+h4,
+.h4 {
+	@include h4;
+}
+
+h5,
+.h5 {
+	@include h5;
+}
+
+h6,
+.h6 {
+	@include h6;
+}
+
+p {
+	@include body-1;
+
+	&.is-style-default {
+		@include body-1;
+	}
+
+	&.is-style-lead {
+		@include lead( true , false );
+	}
+
+	&.is-style-lead-large-first-letter {
+		@include lead;
+	}
+
+	&.is-style-body-2 {
+		@include body-2;
+	}
+
+	&.is-style-subtitle {
+		@include overline;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+strong {
+	font-weight: 700;
+}
+
+// Need last child to overwrite :last-child header margins.
+.block-title,
+.block-title:last-child {
+	margin-bottom: $block-title-mb-sm;
+
+	@include media-breakpoint-up(md) {
+		margin-top: rem( 144 - 160 ); // The padding top of blocks should appear as 144.
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: $block-title-mb-md;
+	}
+}
+
+.nuetral-30 {
+	color: paint(neutral-30)
+}
+.nuetral-45 {
+	color: paint(neutral-45)
+}
+.nuetral-70 {
+	color: paint(neutral-70)
+}
+.nuetral-88 {
+	color: paint(neutral-88)
+}
+.nuetral-94 {
+	color: paint(neutral-94)
+}
+
+.body-1 {
+	@include body-1;
+}
+.body-2 {
+	@include body-2;
+}
+.list {
+	@include list;
+}
+.lead {
+	@include lead;
+}
+.quote {
+	@include quote;
+}
+.subtitle-1 {
+	@include subtitle-1;
+}
+.subtitle-2 {
+	@include subtitle-2;
+}
+.button-1 {
+	@include button-1;
+}
+.button-2 {
+	@include button-2;
+}
+.caption {
+	@include caption;
+}
+.overline {
+	@include overline;
+}
+.tag {
+	@include tag;
+}

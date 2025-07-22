@@ -1,0 +1,17 @@
+p.leadparagraph {
+	@include lead( true , false );
+
+	&.first-letter-large{
+		@include lead;
+	}
+}
+
+.highlight-text {
+	padding: rem( 3 ) 0;
+	background: rgba( paint(accent), .1 );
+}
+
+::selection {
+    padding: rem( 3 ) 0;
+	background: rgba( paint(accent), .1 );
+}

@@ -1,0 +1,29 @@
+@mixin menu_item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	padding: rem(17) rem(20) rem(15);
+
+	position: relative;
+
+	color: paint(text-dark);
+	text-transform: uppercase;
+
+	border: none;
+	border-bottom: rem(1) solid paint(neutral-88);
+	background: none;
+
+	@include font(14, 24, 500, 1px);
+
+	@include media-breakpoint-up (md) {
+		padding-bottom: rem(14);
+	}
+
+	@include media-breakpoint-up(mobileMenu, $custom-breakpoints) {
+		padding: 0;
+
+		border: 0;
+	}
+}

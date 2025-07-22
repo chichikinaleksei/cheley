@@ -1,0 +1,113 @@
+.blog-hero {
+    $self: &;
+
+    &__title {
+        margin-bottom: responsive-values(20, 28);
+
+        color: paint(bg-light);
+    }
+
+    &__back-link {
+        margin-bottom: responsive-values(36, 70);
+
+        i {
+            margin-right: rem(8);
+
+            &::before {
+                font-size: rem(26);
+                line-height: rem(26);
+            }
+        }
+
+        &:hover {
+            i {
+                &::before {
+                    color: paint(accent-variant);
+                }
+            }
+        }
+    }
+
+    &__archive-title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__archive-description {
+        margin-top: responsive-values(20, 11);
+    }
+
+    &__tax-subtitle,
+    &__tax-title {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        color: paint(bg-dark);
+
+        @include media-breakpoint-up(md) {
+            text-align: center;
+        }
+    }
+
+    &__tax-title {
+        font-size: responsive-values(34, 60);
+        line-height: responsive-values(40, 50);
+        text-transform: capitalize;
+    }
+
+    &#{$self}--category {
+        margin-top: rem(24);
+        margin-bottom: responsive-values(40, 24);
+
+        @include media-breakpoint-up(sm) {
+            margin-top: rem(71);
+        }
+
+        @include media-breakpoint-up(xxl) {
+            margin-top: rem(51);
+        }
+    }
+
+    &#{$self}--tax,
+    &#{$self}--author {
+        margin-top: rem(24);
+        margin-bottom: responsive-values(40, 42);
+
+        @include media-breakpoint-up(sm) {
+            margin-top: rem(71);
+        }
+
+        @include media-breakpoint-up(xxl) {
+            margin-top: rem(51);
+        }
+
+        #{$self}__back-link {
+            margin-bottom: responsive-values(36, 53);
+        }
+    }
+
+    + .blog-archive-filters {
+        margin-bottom: responsive-values(47, 42);
+    }
+
+    &:not(#{$self}--category):not(#{$self}--tax):not(#{$self}--author) {
+        padding-top: responsive-values(61, 79);
+        padding-bottom: responsive-values(53, 176);
+
+        margin-bottom: responsive-values(31, 64);
+
+        color: paint(bg-light);
+
+        background-image: url(../../images/backgrounds/archive-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        + .blog-archive-filters {
+            margin-bottom: responsive-values(47, 162);
+
+            @include media-breakpoint-up(lg) {
+                margin-top: responsive-values(-130, -176);
+            }
+        }
+    }
+}

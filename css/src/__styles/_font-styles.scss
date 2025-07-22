@@ -1,0 +1,212 @@
+//This file is only for mixins. Don't include any styles in this file or else they will repeated in every block.
+
+@mixin h1( $margins: true ) {
+    font-family: $font-baskerville;
+    font-size: responsive-values(34, 60);
+    font-weight: 700;
+    line-height: responsive-values(40, 64);
+
+    @if ( $margins ) {
+        margin-bottom: responsive-values(16, 32);
+    }
+}
+
+@mixin h2( $margins: true ) {
+    font-family: $font-baskerville;
+    font-size: responsive-values(24, 44);
+    font-weight: 700;
+    line-height: responsive-values(32, 48);
+
+    @if ( $margins ) {
+        margin-top: responsive-values(43, 72);
+        margin-bottom: responsive-values(21, 40);
+    }
+}
+
+@mixin h3( $margins: true ) {
+    font-family: $font-baskerville;
+    font-size: responsive-values(18, 28);
+    font-weight: 700;
+    line-height: responsive-values(24, 32);
+
+    @if ( $margins ) {
+        margin-top: responsive-values(28, 43);
+        margin-bottom: responsive-values(12, 21);
+    }
+}
+
+@mixin h4( $margins: true ) {
+    font-size: responsive-values(16, 20);
+    font-weight: 500;
+    line-height: rem( 24 );
+
+    @if ( $margins ) {
+        margin-top: responsive-values(24, 48);
+        margin-bottom: responsive-values(8, 16);
+    }
+}
+
+@mixin h5( $margins: true ) {
+    font-size: responsive-values(14, 18);
+    font-weight: 500;
+    line-height: responsive-values(16, 24);
+
+    @if ( $margins ) {
+        margin-top: responsive-values(24, 32);
+        margin-bottom: rem( 7 );
+    }
+}
+
+@mixin h6( $margins: true ) {
+    font-size: responsive-values(12, 14);
+    font-weight: 700;
+    line-height: rem( 16 );
+
+    @if ( $margins ) {
+        margin-top: responsive-values(25, 32);
+        margin-bottom: rem( 8 );
+    }
+}
+
+@mixin body-1( $margins: true ) {
+    font-size: responsive-values(15, 18);
+    line-height: responsive-values(24, 32);
+
+    @if ( $margins ) {
+        margin-bottom: responsive-values(16, 32);
+    }
+}
+
+@mixin body-2( $margins: true ) {
+    font-size: responsive-values(14, 16);
+    line-height: responsive-values(24, 28);
+
+    @if ( $margins ) {
+        margin-bottom: rem(16);
+    }
+}
+
+@mixin list( $margins: true ) {
+    @include body-1( $margins );
+}
+
+@mixin lead( $margins: true , $large_first_letter: true ) {
+    font-family: $font-baskerville;
+    font-size: responsive-values( 20 , 24 );
+    line-height: responsive-values( 24 , 40 );
+
+    @if ( $margins ) {
+        margin-bottom: responsive-values( 46 , 77 );
+    }
+
+    @if ( $large_first_letter ) {
+        &::first-letter {
+            @include media-breakpoint-up(md) {
+                float: left;
+                margin-right: rem( 8 );
+
+                font-size: rem( 149 );
+                line-height: rem( 120 );
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@mixin quote( $margins: true ) {
+    font-style: italic;
+    font-size: responsive-values(20, 28);
+    line-height: responsive-values(24, 40);
+
+    @if ( $margins ) {
+        margin-bottom: responsive-values(24, 32);
+    }
+}
+
+@mixin subtitle-1( $margins: true ) {
+    font-size: rem(16);
+    line-height: rem(24);
+
+    @if ( $margins ) {
+        margin-bottom: rem( 24 );
+    }
+}
+
+@mixin subtitle-2( $margins: true ) {
+    font-size: rem( 14 );
+    line-height: rem( 24 );
+
+    @if ( $margins ) {
+        margin-bottom: rem( 24 );
+    }
+}
+
+@mixin button-1( $margins: true ) {
+    font-size: rem( 16 );
+    font-weight: 700;
+    line-height: rem( 32 );
+}
+
+@mixin button-2( $margins: true ) {
+    font-size: rem( 14 );
+    font-weight: 700;
+    line-height: rem( 16 );
+}
+
+@mixin caption( $margins: true ) {
+    font-size: rem( 12 );
+    line-height: rem( 16 );
+
+    @if ( $margins ) {
+        margin-bottom: rem( 8 );
+    }
+}
+
+@mixin overline( $margins: true, $remove_header_margins: true ) {
+    font-size: rem( 14 );
+    font-weight: 700;
+    line-height: rem( 16 );
+    letter-spacing: rem( 1 );
+    text-transform: uppercase;
+
+    @if ( $margins ) {
+        margin-bottom: rem( 8 );
+    }
+
+    @if ( $remove_header_margins ) {
+        + h1,
+        + .h1,
+        + h2,
+        + .h2,
+        + h3,
+        + .h3,
+        + h4,
+        + .h4,
+        + h5,
+        + .h5,
+        + h6,
+        + .h6 {
+            margin-top: 0;
+        }
+    }
+
+    &.align-center {
+        text-align: center;
+    }
+
+    &.align-right {
+        text-align: right;
+    }
+}
+
+@mixin tag( $margins: true ) {
+    font-size: rem( 14 );
+    line-height: rem( 16 );
+    color: paint(neutral-45);
+}
+
+@mixin pagination-number {
+    font-size: rem( 16 );
+    font-weight: 700;
+    line-height: rem( 16 );
+}

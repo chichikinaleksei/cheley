@@ -1,0 +1,362 @@
+{
+	"theme_name": "cheleyCamps",
+	"acf_options": {
+		"init": true,
+		"page_title": "Theme Options",
+		"menu_title": "Theme Options",
+		"menu_slug": "theme-options",
+		"subpages": {
+			"general": {
+				"page_title": "Theme General Settings",
+				"menu_title": "General"
+			},
+			"header": {
+				"page_title": "Theme Header Settings",
+				"menu_title": "Header"
+			},
+			"footer": {
+				"page_title": "Theme Footer Settings",
+				"menu_title": "Footer"
+			},
+			"blog": {
+				"page_title": "Blog Archive Settings",
+				"menu_title": "Blog"
+			},
+			"activities": {
+				"page_title": "Activities Archive Settings",
+				"menu_title": "Activities"
+			},
+			"x404": {
+				"page_title": "404 Settings",
+				"menu_title": "404 Settings"
+			},
+			"tabs": {
+				"page_title": "Tabs Settings",
+				"menu_title": "Tabs"
+			}
+		}
+	},
+	"enqueue_styles": {
+		"fonts": "//use.typekit.net/hka2gik.css",
+		"fonts-sec": "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap",
+		"select2": "css/vendor/select2/select2.min.css",
+		"theme-styles": {
+			"src": "css/dist/style.css",
+			"deps": [],
+			"version": "filemtime",
+			"media": "all"
+		}
+	},
+	"register_styles": {
+		"slick": "css/vendor/slick/slick.css"
+	},
+	"enqueue_scripts": {
+		"yt_api": "//www.youtube.com/iframe_api",
+		"select2": "js/vendor/select2.min.js",
+		"select2_multi_checkbox": "js/vendor/select2.multi-box.min.js"
+	},
+	"register_scripts": {
+		"slick": "js/vendor/slick.min.js",
+		"add-to-any": "//static.addtoany.com/menu/page.js"
+	},
+	"enqueue_built_in_scripts": [],
+	"register_nav_menus": {
+		"primary": "Main Navigation",
+		"mobile_primary": "Mobile - Main Navigation"
+	},
+	"theme_widgets_init": {
+		"Primary": {
+			"name": "Primary Widget Area",
+			"id": "primary_widget_area"
+		}
+	},
+	"enable_shortcodes_fix": false,
+	"enable_thumbnails": true,
+	"thumbnails": [
+		[
+			"thumbnail",
+			190,
+			104,
+			true
+		],
+		[
+			"medium",
+			410,
+			232,
+			true
+		],
+		[
+			"large",
+			1680,
+			1024,
+			false
+		],
+		[
+			"slider-image-hard",
+			1290,
+			728,
+			true
+		],
+		[
+			"slider-image-flexible",
+			9999,
+			480,
+			false
+		],
+		[
+			"main-logo",
+			237,
+			63,
+			false
+		],
+		[
+			"full-width-block",
+			900,
+			999,
+			false
+		],
+		[
+			"standard-width-block",
+			570,
+			999,
+			false
+		],
+		[
+			"footer-logo",
+			164,
+			9999,
+			false
+		],
+		[
+			"next-steps",
+			607,
+			9999,
+			false
+		],
+		[
+			"side-content-portrait",
+			410,
+			464,
+			true
+		],
+		[
+			"side-content-landscape",
+			740,
+			512,
+			true
+		],
+		[
+			"activity-card",
+			410,
+			410,
+			true
+		],
+		[
+			"activity-slider",
+			715,
+			9999,
+			false
+		],
+		[
+			"size-full",
+			1920,
+			9999,
+			false
+		],
+		[
+			"size-half-full",
+			960,
+			9999,
+			false
+		],
+		[
+			"hero-small",
+			1290,
+			728,
+			false
+		],
+		[
+			"tab-img",
+			710,
+			532,
+			true
+		],
+		[
+			"post-card",
+			410,
+			232,
+			true
+		],
+		[
+			"mega-menu",
+			410,
+			232,
+			true
+		],
+		[
+			"col-img",
+			630,
+			352,
+			true
+		],
+		[
+			"col-img-wide",
+			825,
+			624,
+			true
+		],
+		[
+			"size-full-2-1",
+			1920,
+			960,
+			true
+		],
+		[
+			"intro-logo",
+			102,
+			102,
+			false
+		],
+		[
+			"testimonial",
+			410,
+			584,
+			true
+		],
+		[
+			"blog-related",
+			850,
+			480,
+			true
+		],
+		[
+			"icon-lg",
+			289,
+			234,
+			false
+		],
+		[
+			"program-single-card",
+			840,
+			680,
+			true
+		],
+		[
+			"activities-card",
+			264,
+			330,
+			true
+		],
+		[
+			"tab-img-link",
+			410,
+			480,
+			true
+		],
+		[
+			"post-hero",
+			1290,
+			644,
+			true
+		]
+	],
+	"mobile_breakpoint": 500,
+	"tablet_breakpoint": 1000,
+	"use_testimonal_post_type": true
+}
+/* ================================================================ */
+/* ========================= EXAMPLE CODE ========================= */
+/* ================================================================ */
+/*
+{
+
+	"theme_name" : "cheleyCamps",
+
+	"acf_options": {
+		"init": true,
+		"page_title": "Theme Options",
+		"menu_title": "Theme Options",
+		"menu_slug": "theme-options",
+		"subpages": {
+			"subpage_1": {
+				"page_title": "Theme General Settings",
+				"menu_title": "General"
+			},
+			"subpage_2": {
+				"page_title": "Theme Header Settings",
+				"menu_title": "Header"
+			},
+			"subpage_3": {
+				"page_title": "Theme Footer Settings",
+				"menu_title": "Footer"
+			},
+			"subpage_4": {
+				"page_title": "Additional Theme Options",
+				"menu_title": "Additional Theme Options",
+                "parent_slug": "custom-parent-slug",
+                "post_id": "custom-post-id"
+			},
+		}
+	},
+
+	"register_nav_menus" : {
+		"primary" : "Main Navigation"
+	},
+
+	"enqueue_styles": {
+		"style": {
+			"src" : "style.css",
+			"deps": [ ],
+			"version": "1.0",
+			"media": "all"
+		},
+
+		"simple": "css/dist/simple.css"
+	},
+
+	"enqueue_scripts": {
+		"script": {
+			"src" : "js/dist/script.js",
+			"deps": [ ],
+			"version": "1.0",
+			"in_footer": true
+		},
+
+		"simple": "js/dist/simple.js"
+	},
+
+	"enqueue_built_in_scripts": [
+		"jquery-ui-core", "iris", "underscore"
+	],
+
+	"theme_widgets_init" : {
+		"Primary" : {
+			"name" : "Primary Widget Area",
+			"id" : "primary_widget_area",
+			"before_widget" : "<div id='%1$s' class='widget %2$s'>",
+			"after_widget" : "</div>",
+			"before_title" : "<h3 class='widget-title'>",
+			"after_title" : "</h3>"
+		}
+	},
+
+	"enable_thumbnails" : true,
+
+	"thumbnails": [
+		[
+			"thumbnail-name-1",
+			800,
+			600,
+			["left", "top"]
+		],
+		[
+			"thumbnail-name-2",
+			400,
+			300,
+			true
+		]
+	]
+	"mobile_breakpoint": 500,
+	"tablet_breakpoint": 1000
+}
+*/

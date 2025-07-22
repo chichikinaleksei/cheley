@@ -1,0 +1,24 @@
+@import "../../../css/src/lib/base-includes";
+
+// Ensure that styling targets the block and only the block.
+.block-editor-block-list__layout {
+    @import "./style";
+
+    .block-tabs {
+		&:before{
+			z-index: 1;
+		}
+        .tabs__tab-content {
+            .container {
+                .row .col-12 {
+                    flex: 0 0 100% !important;
+
+                    max-width: 100% !important;
+                }
+            }
+        }
+		.tabs__bg {
+			z-index: 0;
+		}
+    }
+}

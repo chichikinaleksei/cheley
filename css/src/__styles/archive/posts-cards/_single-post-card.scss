@@ -1,0 +1,88 @@
+.post-card {
+    padding: 0 0 rem(16);
+
+    color: paint(text-dark);
+
+    border-bottom: rem(1) solid paint(neutral-88);
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 0 rem(20);
+    }
+
+    &__image {
+        display: block;
+
+        margin-bottom: rem(18);
+
+        transition: opacity .3s;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(24);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    &__category {
+        margin-bottom: rem(4);
+
+        font-size: responsive-values(12, 14);
+        font-weight: 700;
+        line-height: rem(16);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(11);
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: rem(19);
+
+        font-size: responsive-values(18, 28);
+        font-weight: 700;
+        line-height: responsive-values(24, 32);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(21);
+        }
+
+        a {
+            display: block;
+
+            color: paint(text-dark) !important;
+            text-decoration: none !important;
+
+            transition: color .3s;
+
+            &:hover {
+                color: paint(accent) !important;
+            }
+        }
+    }
+
+    &__author {
+        margin-bottom: 0;
+
+        font-size: responsive-values(12, 14);
+        font-weight: 700;
+        line-height: rem(16);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: rem(4);
+        }
+    }
+
+    &__date {
+        font-size: rem(12);
+        font-weight: 400;
+        line-height: rem(16);
+        color: paint(neutral-45);
+    }
+}

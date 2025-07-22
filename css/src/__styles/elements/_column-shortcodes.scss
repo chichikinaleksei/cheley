@@ -1,0 +1,5 @@
+.content-column {
+	@extend p;
+	padding: 0 rem( 15 );
+	margin-left: rem( $grid-gutter-width * 0.5 );
+}

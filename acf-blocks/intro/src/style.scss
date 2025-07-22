@@ -1,0 +1,51 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-intro {
+	margin: responsive-values(57, 80) 0 responsive-values(64, 96);
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__image {
+		width: rem(84);
+		aspect-ratio: 1;
+		margin-bottom: rem(24);
+
+		@include media-breakpoint-up(lg) {
+			width: rem(102);
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__preheader {
+		text-transform: uppercase;
+		font-size: responsive-values(12, 14);
+		line-height: responsive-values(16, 16);
+		letter-spacing: rem(3);
+		border-top: rem(1) solid paint(neutral-88);
+		border-bottom: rem(1) solid paint(neutral-88);
+		padding: responsive-values(11, 12) 0;
+		margin-bottom: responsive-values(29, 26);
+	}
+
+	&__description {
+		text-align: center;
+		font-family: $font-baskerville;
+		font-size: responsive-values(20, 28);
+		line-height: responsive-values(32, 40);
+		font-weight: 500;
+		max-width: rem(825);
+		letter-spacing: rem(0.5);
+		margin-bottom: responsive-values(35, 61);
+	}
+
+	+ .block-image-content-tabs {
+		margin-bottom: responsive-values(66, 96);
+	}
+}

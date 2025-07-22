@@ -1,0 +1,116 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-enrollment-countdown {
+	&__counters {
+		display: flex;
+		justify-content: center;
+
+		overflow: hidden;
+
+		.slick-list {
+			padding: 0 rem(20);
+
+			margin-bottom: rem(24);
+		}
+	}
+
+	&__counter-wrapper {
+		width: rem(280);
+		padding: 0;
+
+		margin: 0 rem(5);
+
+		@include media-breakpoint-up(lg) {
+			padding: 0 rem(15);
+
+			margin: 0 0 rem(20) 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(37);
+
+		text-align: center;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(60);
+		}
+	}
+
+	&__counter {
+		text-align: center;
+		text-transform: uppercase;
+
+		border: rem(1) solid paint(neutral-70);
+
+
+		&-days {
+			padding: rem(15) 0;
+
+			font-size: rem(14);
+			font-weight: 700;
+			line-height: rem(24);
+			color: white;
+			letter-spacing: rem(1);
+
+			background-color: paint(forestgreen);
+
+			@include media-breakpoint-up(lg) {
+				padding: rem(27) 0;
+			}
+		}
+
+		&-description {
+			padding: rem(15) 0;
+
+			font-size: rem(14);
+			font-weight: 700;
+			line-height: rem(24);
+			color: paint(text-dark);
+			letter-spacing: rem(1);
+
+			border-top: rem(1) solid paint(neutral-70);
+
+			@include media-breakpoint-up(lg) {
+				padding: rem(28) 0 rem(27);
+			}
+		}
+	}
+
+	&__buttons {
+		max-width: rem(280);
+
+		margin: 0 auto;
+
+		@include media-breakpoint-up(lg) {
+			max-width: 100%;
+		}
+
+		&-wrapper {
+			width: 100%;
+
+			order: 4;
+		}
+
+
+
+		.c-btn {
+			justify-content: center;
+
+			width: 100%;
+			padding: rem(15) 0;
+
+			border: rem(1) solid paint(neutral-70);
+
+			@include media-breakpoint-up(lg) {
+				justify-content: center;
+
+				padding: rem(27) 0;
+			}
+
+			&-secondary {
+				border-top: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,104 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-image-text-links {
+    $self: &;
+
+    margin: rem( 80 ) 0;
+
+    @include media-breakpoint-up(md) {
+        margin: rem( 160 ) 0;
+    }
+
+    & + & {
+        margin-top: rem( -4 );
+
+        @include media-breakpoint-up(md) {
+            margin-top: rem( -10 );
+        }
+    }
+
+    &__text {
+        margin-bottom: responsive-values(44, 72);
+    }
+
+
+    &__block {
+        display: block;
+
+        &[target="_blank"] {
+            #{ $self }__link {
+                &::after {
+                    @include icon-font( $icon-launch-external );
+                }
+            }
+        }
+    }
+
+    a#{ $self }__block {
+        &:hover,
+        &:focus {
+            #{ $self }__link {
+                background-color: paint(neutral-97);
+            }
+
+            #{ $self }__image-container {
+                opacity: .8;
+            }
+        }
+    }
+
+    &__cards .row {
+        row-gap: rem( 16 );
+        @include media-breakpoint-up( md ) {
+            row-gap: rem( 32 );
+        }
+    }
+
+    &__image-container {
+        padding-top: 55.8730%;
+
+        position: relative;
+
+        transition: opacity $transition-default;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            object-fit: cover;
+        }
+    }
+
+    &__link {
+        display: block;
+
+        padding: rem( 16 );
+
+        position: relative;
+
+        font-size: rem( 14 );
+        font-weight: 700;
+        line-height: 1.5rem;
+        letter-spacing: rem( 1 );
+        text-transform: uppercase;
+
+        border-bottom: 1px solid paint(neutral-88);
+
+        transition: background-color $transition-default;
+
+        &::after {
+            @include icon-font( $icon-arrow-forward );
+
+            position: absolute;
+            top: 50%;
+            right: rem( 16 );
+            transform: translate(0, -50%);
+
+            font-size: rem( 12 );
+        }
+    }
+}

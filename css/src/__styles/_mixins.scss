@@ -1,0 +1,126 @@
+//This file is only for mixins. Don't include any styles in this file or else they will repeated in every block.
+
+@use "sass:math";
+
+@mixin cf {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@function vw-size($s, $w: 1440) {
+	@return math.div($s, $w) * 100 + vw;
+}
+
+@mixin headings( $start: 1, $end: 6 ) {
+	$headings: '';
+	@for $i from $start through $end {
+		@if $i != $start {
+			$headings: '#{ $headings },h#{ $i },.h#{ $i }';
+		} @else {
+			$headings: 'h#{ $i },.h#{ $i }';
+		}
+	}
+
+	#{ $headings } {
+		@content;
+	}
+}
+
+@mixin icon-font( $content: '', $font-size: 24px ) {
+	content: $content;
+	font-family: $font-iconfont;
+	font-size: $font-size;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin rm-before() {
+	&::before {
+		content: none !important;
+	}
+}
+@mixin rm-after() {
+	&::before {
+		content: none !important;
+	}
+}
+
+@mixin responsive-grid($sm: 12, $md: 12, $lg: 12, $xl: 12, $xxl: 12) {
+    width: calc(var(--columnWidth) * #{$sm} - 40px);
+    max-width: calc(var(--columnMaxWidth) * #{$sm} - 40px);
+
+    @include media-breakpoint-up(md) {
+        width: calc(var(--columnWidth) * #{$md} - 30px);
+        max-width: calc(var(--columnMaxWidth) * #{$md} - 30px);
+    } 
+
+    @if ($lg != $md) {
+        @include media-breakpoint-up(lg) {
+            width: calc(var(--columnMaxWidth) * #{$lg} - 30px);
+            max-width: calc(var(--columnMaxWidth) * #{$lg} - 30px);
+        }
+    }
+
+    @if ($xl != $lg) {
+        @include media-breakpoint-up(xl) {
+            width: calc(var(--columnWidth) * #{$xl} - 30px);
+            max-width: calc(var(--columnMaxWidth) * #{$xl} - 30px);
+        }
+    }
+
+    @if ($xxl != $xl) {
+        @include media-breakpoint-up(xxl) {
+            width: calc(var(--columnWidth) * #{$xxl} - 30px);
+            max-width: calc(var(--columnMaxWidth) * #{$xxl} - 30px);
+        }
+    }
+}
+
+@function rel($size, $rel) {
+    @return math.div($size, $rel);
+}
+
+@mixin font($fontSize: $font-size-base,
+    $lineHeight: $line-height-base,
+    $fontWeight: false,
+    $letterSpacing: false,
+    $fontStyle: false,
+    $fontFamily: false) {
+    font-size: rem($fontSize);
+    line-height: rel($lineHeight, $fontSize);
+
+    @if $fontFamily {
+        font-family: $fontFamily;
+    }
+
+    @if $letterSpacing {
+        letter-spacing: rem($letterSpacing);
+    }
+
+    @if $fontWeight {
+        font-weight: $fontWeight;
+    }
+
+    @if $fontStyle {
+        font-style: $fontStyle;
+    }
+}
+
+@mixin flex($width) {
+    flex: 0 0 $width;
+
+    width: $width;
+    max-width: $width;
+}

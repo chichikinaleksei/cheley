@@ -1,0 +1,29 @@
+@use "sass:math";
+
+:root {
+    @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            $containerSpacing: $container-sm-spacing;
+            $columnSpacing: rem(20);
+            $columnWidth: 1;
+
+            @if ($breakpoint == 'md') {
+                $containerSpacing: $container-md-spacing;
+                $columnSpacing: rem(15);
+            } @else if ($breakpoint == 'lg' or $breakpoint == 'xl' or $breakpoint == 'xxl') {
+                $containerSpacing: $container-lg-spacing;
+                $columnSpacing: rem(15);
+            }
+
+            --containerWidth: calc(var(--vw, 1vw) * 100 - #{$containerSpacing * 2});
+            --containerMaxWidth: #{$container-max-width - $containerSpacing * 2};
+
+            $gutterWidth: calc((var(--vw, 1vw) * 100 - #{$container-max-width - $containerSpacing * 2}) / 2);
+
+            --gutterWidth: clamp(#{$containerSpacing}, 100%, #{$gutterWidth});
+
+            --columnWidth: #{math.div($container-max-width - $containerSpacing * 2 + $columnSpacing * 2, 12)};
+            --columnMaxWidth: calc((100% - #{$containerSpacing * 2 - $columnSpacing * 2}) / 12);
+        }
+    }
+}

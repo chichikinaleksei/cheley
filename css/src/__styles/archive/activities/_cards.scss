@@ -1,0 +1,82 @@
+.activity-card {
+    padding-bottom: rem(17);
+
+    border-bottom: rem(1) solid paint(neutral-88);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        position: relative;
+        margin-bottom: rem(16);
+    }
+
+    &__label {
+        display: inline-block;
+
+        padding: rem(8) rem(10);
+
+        position: absolute;
+        z-index: 1;
+
+        text-align: center;
+        color: paint(accent);
+
+        background-color: paint(bg-light-2);
+
+        @include overline;
+    }
+
+    &__image-link {
+        display: block;
+
+        width: 100%;
+    }
+
+    &__image {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+
+            transition: transform .3s;
+
+            @include media-breakpoint-up(lg) {
+                width: auto;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.15);
+            }
+        }
+    }
+
+    &__category {
+        margin-bottom: rem(4);
+
+        font-size: responsive-values(14, 16);
+        font-weight: 400;
+        line-height: responsive-values(24, 28);
+        color: paint(neutral-45);
+    }
+
+    &__title {
+        margin-top: 0;
+
+        color: paint(text-dark);
+
+        transition: color .3s;
+
+        &:hover {
+            color: paint(accent-variant);
+        }
+    }
+}

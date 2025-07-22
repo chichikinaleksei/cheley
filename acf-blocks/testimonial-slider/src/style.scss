@@ -1,0 +1,287 @@
+@import "../../../css/src/lib/base-includes";
+
+.block-testimonial-slider {
+	padding: rem(54) 0 rem(49) 0;
+
+	position: relative;
+	margin: rem(68) 0 rem(70);
+
+	@include media-breakpoint-up(xl) {
+		padding: rem(130) 0 rem(168) 0;
+	}
+
+	.container {
+		@include media-breakpoint-up(xxl) {
+			width: 87.4vw;
+			max-width: 87.4vw;
+			padding: 0;
+		}
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		pointer-events: none;
+
+		width: 100%;
+
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	&::before {
+		background-image: url(../../../images/decorations/brush-top-mobile.svg);
+		background-position: center top rem(-1);
+
+		@include media-breakpoint-up(sm) {
+			background-image: url(../../../images/decorations/brush-top-desk.svg);
+			background-position: center top rem(-6);
+			top: rem(-1);
+		}
+	}
+
+	&::after {
+		background-image: url(../../../images/decorations/brush-bottom-mobile.svg);
+		background-position: center bottom rem(-1);
+
+		@include media-breakpoint-up(sm) {
+			background-image: url(../../../images/decorations/brush-bottom-desk.svg);
+			background-position: center bottom rem(-6);
+			bottom: rem(-1);
+		}
+	}
+
+	+ .block-enrollment-countdown {
+		margin-top: responsive-values(-3, 116);
+	}
+}
+
+.testimonial-slider {
+	position: relative;
+	z-index: 3;
+
+	&__background {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		overflow: hidden;
+
+		&::after {
+			content: "";
+
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			background: linear-gradient(180deg, #002e40 0%, rgba(0, 73, 101, 0.28) 100%),
+				linear-gradient(0deg, rgba(0, 73, 101, 0.6), rgba(0, 73, 101, 0.6));
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			object-fit: cover;
+		}
+	}
+
+	&__slide {
+		text-align: center;
+
+		background: paint(bg-light);
+
+		@include media-breakpoint-up(xl) {
+			margin-top: rem(48);
+		}
+	}
+
+	&__content-wrapper {
+		flex-wrap: nowrap;
+
+		padding: rem(35) rem(20) rem(92);
+
+		margin: 0;
+
+		@include media-breakpoint-up(lg) {
+			padding: rem(75) rem(87) rem(92);
+		}
+		@include media-breakpoint-up(xl) {
+			align-items: stretch;
+
+			height: 100%;
+			padding-bottom: rem(68);
+		}
+	}
+
+	&__image {
+		display: none;
+		flex: 0 0 rem(410);
+
+		min-width: rem(410);
+		padding-top: rem(16);
+
+		margin-top: rem(-136);
+
+		@include media-breakpoint-up(xl) {
+			display: block;
+		}
+
+		&-caption {
+			display: block;
+
+			margin-top: rem(16);
+
+			font-size: rem(12);
+			line-height: rem(16);
+			text-align: left;
+		}
+	}
+
+	&__quote-wrapper {
+		text-align: left;
+
+		@include media-breakpoint-up(xl) {
+			padding-top: rem(45);
+
+			margin-bottom: rem(31);
+			margin-left: rem(142);
+
+			border-top: rem(1) solid paint(neutral-70);
+			border-bottom: rem(1) solid paint(neutral-70);
+		}
+	}
+
+	&__quote-icon {
+		margin-left: rem(6);
+
+		color: paint(accent-variant);
+		&::before {
+			font-size: rem(32);
+
+			@include media-breakpoint-up(xl) {
+				font-size: rem(37);
+			}
+		}
+	}
+
+	&__quote {
+		padding: 0;
+
+		margin: rem(23) 0 0;
+
+		border-left: none;
+
+		@include media-breakpoint-up(xl) {
+			margin: rem(22) 0 rem(131);
+		}
+
+		p:not([class]) {
+			margin-bottom: rem(37);
+
+			font-size: responsive-values(20, 28);
+			line-height: responsive-values(32, 40);
+
+			@include media-breakpoint-up(xl) {
+				margin-bottom: rem(45);
+			}
+		}
+	}
+
+	&__name {
+		display: block;
+
+		margin-bottom: rem(8);
+
+		font-family: $font-austin-pen;
+		font-size: responsive-values(20, 26);
+		font-weight: 600;
+		font-style: normal;
+		line-height: responsive-values(24, 26);
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(6);
+		}
+	}
+
+	&__label {
+		display: block;
+
+		font-size: responsive-values(14, 16);
+		font-style: normal;
+		line-height: responsive-values(24, 28);
+	}
+
+	.slick-track {
+		display: flex !important;
+	}
+
+	.slick-slide {
+		height: inherit !important;
+	}
+
+	.slick-dots {
+		padding: 0;
+
+		position: absolute;
+		z-index: 3;
+		bottom: rem(12);
+		left: rem(20);
+
+		list-style: none;
+
+		@include media-breakpoint-up(lg) {
+			left: rem(87);
+		}
+		@include media-breakpoint-up(xl) {
+			bottom: rem(152);
+			left: rem(641);
+		}
+
+		li {
+			display: inline-block;
+			&:not(:last-child) {
+				margin-right: rem(4);
+			}
+		}
+
+		button {
+			width: rem(40);
+			height: rem(40);
+
+			font-size: rem(14);
+			color: paint(text-dark);
+
+			border: 0;
+			border-radius: 50%;
+			background-color: paint(bg-light);
+
+			&:hover,
+			&:focus {
+				background-color: paint(neutral-94);
+			}
+		}
+
+		.slick-active button {
+			color: paint(text-light);
+
+			background-color: paint(accent-variant);
+		}
+	}
+}
